@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900);
+
+
+
+*{
+    font-family: 'Outfit';
+    box-sizing: border-box;
+    background-color: rgb(23,23,26);
+    color: whitesmoke;
+}
+
+
+.cryptoItem{
+    width: 100%;
+    height: 30px;
+    /* border: limegreen 1px solid; */
+    padding: 35px;
+    border-bottom: 1px rgb(4, 51, 82) solid;
+}
+
+.cryptoItem:hover{
+    background-color: #1b1e27;
+}
+
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50%{width: 120px; height: 120px;}
+    100% { transform: rotate(360deg); }
+}
