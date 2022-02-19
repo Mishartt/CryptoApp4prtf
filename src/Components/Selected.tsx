@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { useDispatch } from "react-redux";
+import React, { FC, useState } from "react";
+import { useDispatch, useStore } from "react-redux";
 import { cryptoActionTypes } from "../types/cryptoTypes";
 
 
@@ -25,14 +25,23 @@ const Selected:FC<any> = () => {
         }
         
     }
-
+    
+    
+    
+   
     return(
+        <div style={{display:'flex'}}>
         <select onChange={sort} name="sortBy" placeholder='sortBy' id="">
         <option disabled selected >sortBy</option>
         <option value="byPrice">price</option>
         <option value="24h">24h</option>
         <option value="7d">7d</option>
         </select>
+                <input
+                placeholder="Search"
+                onChange={(e) => dispatch({type:cryptoActionTypes.search,payload:e.target.value.toLocaleUpperCase()})}
+                style={{border:'sold 3px transparent'}} type="text" />
+        </div>
     )
 }
 

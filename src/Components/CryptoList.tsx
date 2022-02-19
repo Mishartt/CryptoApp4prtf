@@ -4,7 +4,7 @@ import React from "react";
 
 const CryptoList = () => {
 
-    const coins = useSelector((state:any) => state.crypto.crypto)
+    const coins = useSelector((state:any) => state.crypto.sortedCrypto)
     console.log(coins);
     
     return(

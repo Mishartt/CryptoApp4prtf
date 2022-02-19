@@ -14,10 +14,13 @@ export const fetchCrypto = () => {
             for(let i = 0;i<currency.length;i++){
                
                  resp = [...resp,await axios.get(`https://data.messari.io/api/v1/assets/${currency[i]}/metrics`).then(rs => rs.data.data)] 
+                 resp[i].open = '10vh'
+                 resp[i].visible = 'none'
                
             }
             
             dispatch(fetchCryptoAction(resp))
+            dispatch({type:cryptoActionTypes.load,payload:resp})
             dispatch({type:cryptoActionTypes.isLoading})
             
             

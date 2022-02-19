@@ -5,6 +5,7 @@ import { cryptoActionTypes, ICryptioAction, ICryptoState } from "../../types/cry
 
 const initialState:ICryptoState = {
     crypto:[],
+    sortedCrypto:[],
     sort:null,
     isLoading:true,
 }
@@ -37,6 +38,31 @@ export const cryptoReducer = (state:ICryptoState = initialState,action:ICryptioA
 
         case cryptoActionTypes.isLoading:
             return{...state,isLoading:false}
+
+        case cryptoActionTypes.open:
+            let newState = {...state}
+            if(newState.crypto[newState.crypto.indexOf(action.payload)].open == '20vh'){
+                newState.crypto[newState.crypto.indexOf(action.payload)].open = '10vh'
+            }else{
+                newState.crypto[newState.crypto.indexOf(action.payload)].open = '20vh'
+            }
+              
+                return newState
+            
+        case cryptoActionTypes.visible:
+            let newStatex = {...state}
+            if(newStatex.crypto[newStatex.crypto.indexOf(action.payload)].visible == 'flex' ){
+                newStatex.crypto[newStatex.crypto.indexOf(action.payload)].visible = 'none' 
+            }else{
+                newStatex.crypto[newStatex.crypto.indexOf(action.payload)].visible = 'flex' 
+            }
+                return newStatex
+
+        case cryptoActionTypes.search:
+            return {...state,sortedCrypto:state.crypto.filter(coin => coin.symbol.includes(action.payload))}
+
+        case cryptoActionTypes.load:
+            return {...state,sortedCrypto:action.payload}
         
         default:
             return state
@@ -48,4 +74,4 @@ export const cryptoReducer = (state:ICryptoState = initialState,action:ICryptioA
 
 
 
-//////Add find crypto , favorite crypto , loadingStatus, more info after click, vinesti standartniy pak crtipti v state , day/night mode , --7d-- /////
+//////Add find crypto , favorite crypto , --- loadingStatus more info after click, vinesti standartniy pak crtipti v state , day/night mode , --7d ////

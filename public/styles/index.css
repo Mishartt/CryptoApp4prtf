@@ -12,11 +12,20 @@
 
 .cryptoItem{
     width: 100%;
-    height: 30px;
+    /* height: 30px; */
     /* border: limegreen 1px solid; */
     padding: 35px;
     border-bottom: 1px rgb(4, 51, 82) solid;
 }
+
+.cryptoItem p {
+    background-color: transparent;
+}
+
+.cryptoItem strong {
+    background-color: transparent;
+}
+
 
 .cryptoItem:hover{
     background-color: #1b1e27;
