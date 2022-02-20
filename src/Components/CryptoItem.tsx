@@ -63,7 +63,7 @@ const CryptoItem:FC<any> = ({coin}:ICoin) => {
         <div onClick={more} className="cryptoItem" style={{height:coin.open }}>
             <div className="cxx" style={{display:'flex',alignItems:'center',height:'90%',justifyContent:'space-between',backgroundColor:'transparent',maxHeight:'3vh'}}>
                 <div style={{width:'14%',backgroundColor:'transparent',display:'flex',alignItems:'center',justifyContent:'start'}}>
-                <img src={coinImg} style={{maxHeight:'40px',marginRight:'7%',backgroundColor:'transparent'}} alt="" /> 
+                <img className="coinImg" src={coinImg} style={{marginRight:'7%',backgroundColor:'transparent'}} alt="" /> 
                 <p style={{backgroundColor:'transparent'}}> <strong style={{backgroundColor:'transparent'}}>{coin.symbol}</strong> | {coin.name}</p>
                 </div>
                 <p onClick={(e) => h24(e)} style={{backgroundColor:'transparent'}}>24h: <strong style={{color:colorr,backgroundColor:'transparent'}}>{rounded(coin.market_data.percent_change_usd_last_24_hours)} %</strong></p>
