@@ -17,7 +17,7 @@ function App() {
   },[])
   
   const log = () => {
-    console.log(cryptoState);
+    // console.log(cryptoState);
     
   }
 
@@ -27,8 +27,8 @@ function App() {
   
 
   return (
-    <div style={{width:'100%',display:'flex',flexDirection:'column',alignItems:"center",paddingTop:'25vh',minHeight:'100vh'}} className="App">
-            <div className="container" style={{width:'55%',minHeight:'35px'}} onClick={() => log()}>                            
+    <div style={{width:'100%',display:'flex',flexDirection:'column',alignItems:"center",minHeight:'100vh'}} className="App">
+            <div className="cryptoContainer" style={{minHeight:'35px'}} onClick={() => log()}>                            
                   <Selected/>
                   <CryptoList/>
             </div>

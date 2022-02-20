@@ -17,24 +17,24 @@ export const cryptoReducer = (state:ICryptoState = initialState,action:ICryptioA
         return {...state ,crypto:action.payload}
         
     case cryptoActionTypes.SORT_BY_PRICE:
-        return {...state,crypto:state.crypto.sort((a,b) => b.market_data.price_usd - a.market_data.price_usd ),sort:'plus'}
+        return {...state,crypto:state.sortedCrypto.sort((a,b) => b.market_data.price_usd - a.market_data.price_usd ),sort:'plus'}
 
     case cryptoActionTypes.SORT_BY_24H:
-         return {...state,crypto:state.crypto.sort((a,b) => b.market_data.percent_change_usd_last_24_hours - a.market_data.percent_change_usd_last_24_hours),sort:'plus'}
+         return {...state,crypto:state.sortedCrypto.sort((a,b) => b.market_data.percent_change_usd_last_24_hours - a.market_data.percent_change_usd_last_24_hours),sort:'plus'}
 
     case cryptoActionTypes.SORT_BY_7D:
-        return {...state,crypto:state.crypto.sort((a,b) => b.roi_data.percent_change_last_1_week - a.roi_data.percent_change_last_1_week),sort:'plus'}
+        return {...state,crypto:state.sortedCrypto.sort((a,b) => b.roi_data.percent_change_last_1_week - a.roi_data.percent_change_last_1_week),sort:'plus'}
 
 
 
         case cryptoActionTypes.SORT_BY_PRICE_:
-            return {...state,crypto:state.crypto.sort((a,b) => a.market_data.price_usd - b.market_data.price_usd),sort:null}
+            return {...state,crypto:state.sortedCrypto.sort((a,b) => a.market_data.price_usd - b.market_data.price_usd),sort:null}
     
         case cryptoActionTypes.SORT_BY_24H_:
-            return {...state,crypto:state.crypto.sort((a,b) => a.market_data.percent_change_usd_last_24_hours - b.market_data.percent_change_usd_last_24_hours),sort:null}
+            return {...state,crypto:state.sortedCrypto.sort((a,b) => a.market_data.percent_change_usd_last_24_hours - b.market_data.percent_change_usd_last_24_hours),sort:null}
 
         case cryptoActionTypes.SORT_BY_7D_:
-            return {...state,crypto:state.crypto.sort((a,b) => a.roi_data.percent_change_last_1_week - b.roi_data.percent_change_last_1_week),sort:null}
+            return {...state,crypto:state.sortedCrypto.sort((a,b) => a.roi_data.percent_change_last_1_week - b.roi_data.percent_change_last_1_week),sort:null}
 
         case cryptoActionTypes.isLoading:
             return{...state,isLoading:false}
@@ -59,6 +59,8 @@ export const cryptoReducer = (state:ICryptoState = initialState,action:ICryptioA
                 return newStatex
 
         case cryptoActionTypes.search:
+           
+            
             return {...state,sortedCrypto:state.crypto.filter(coin => coin.symbol.includes(action.payload))}
 
         case cryptoActionTypes.load:

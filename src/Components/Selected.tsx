@@ -27,7 +27,6 @@ const Selected:FC<any> = () => {
     }
     
     
-    
    
     return(
         <div style={{display:'flex'}}>

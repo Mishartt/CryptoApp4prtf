@@ -6,7 +6,7 @@ import { fetchCryptoAction } from "../actionCreators/cryptoActions"
 
 
 export const fetchCrypto = () => {
-    const currency = ['btc','eth','ltc','doge','ada','avax','sol','mana','THETA','shib','cro','near','uni','trx']
+    const currency = ['btc','eth','ltc','doge','ada','avax','sol','mana','THETA','cro','near','uni','trx']
     return async (dispatch:Dispatch<any>) => {
         try{
             
