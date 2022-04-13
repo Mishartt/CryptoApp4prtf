@@ -40,6 +40,7 @@ const Selected:FC<any> = () => {
                 placeholder="Search"
                 onChange={(e) => dispatch({type:cryptoActionTypes.search,payload:e.target.value.toLocaleUpperCase()})}
                 style={{border:'sold 3px transparent'}} type="text" />
+                <button className="calc__btn">Converter</button>
         </div>
     )
 }

@@ -16,19 +16,19 @@ function App() {
     
   },[])
   
-  const log = () => {
-    // console.log(cryptoState);
-    
-  }
 
   if(cryptoState.isLoading){
-    return  <div style={{position:'absolute',left:'45%',top:'40vh'}} className='loader'></div>
+      
+    return (
+      <div style={{width:'95%',height:'90vh',display:'flex',justifyContent:'center',alignItems:'center'}}>
+          <div className='loader'></div>
+      </div>)
   }
   
 
   return (
     <div style={{width:'100%',display:'flex',flexDirection:'column',alignItems:"center",minHeight:'100vh'}} className="App">
-            <div className="cryptoContainer" style={{minHeight:'35px'}} onClick={() => log()}>                            
+            <div className="cryptoContainer" style={{minHeight:'35px'}}>                            
                   <Selected/>
                   <CryptoList/>
             </div>
