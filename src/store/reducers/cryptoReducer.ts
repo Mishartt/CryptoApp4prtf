@@ -1,3 +1,4 @@
+import { start } from "repl";
 import { cryptoActionTypes, ICryptioAction, ICryptoState } from "../../types/cryptoTypes";
 
 
@@ -8,7 +9,8 @@ const initialState:ICryptoState = {
     sortedCrypto:[],
     sort:null,
     isLoading:true,
-}
+    converter:false,
+    }
 
 
 export const cryptoReducer = (state:ICryptoState = initialState,action:ICryptioAction):ICryptoState => {
@@ -65,6 +67,9 @@ export const cryptoReducer = (state:ICryptoState = initialState,action:ICryptioA
 
         case cryptoActionTypes.load:
             return {...state,sortedCrypto:action.payload}
+
+        case cryptoActionTypes.changeToCovcerter:
+            return{...state,converter:!state.converter}
         
         default:
             return state

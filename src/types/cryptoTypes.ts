@@ -21,6 +21,7 @@ export enum cryptoActionTypes {
     visible = 'visible',
     search = 'search',
     load = 'load',
+    changeToCovcerter = 'changeToCovcerter'
 }
 
 interface market_data{
@@ -42,7 +43,7 @@ interface marketcap{
     volume_turnover_last_24_hours_percent:number
 }
 
-interface ICoinn{
+export interface ICoinn{
     name:string
     symbol:string
     market_data:market_data
@@ -62,4 +63,5 @@ export interface ICryptoState {
     sortedCrypto:ICoinn[]
     sort:string | null
     isLoading:boolean
+    converter:boolean
 }

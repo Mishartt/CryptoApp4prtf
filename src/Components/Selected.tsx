@@ -10,7 +10,7 @@ const Selected:FC<any> = () => {
 
 
     const sort = (e:any) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         switch(e.target.value){
             case 'byPrice':
                     dispatch({type:cryptoActionTypes.SORT_BY_PRICE})
@@ -40,7 +40,7 @@ const Selected:FC<any> = () => {
                 placeholder="Search"
                 onChange={(e) => dispatch({type:cryptoActionTypes.search,payload:e.target.value.toLocaleUpperCase()})}
                 style={{border:'sold 3px transparent'}} type="text" />
-                <button className="calc__btn">Converter</button>
+                <button onClick={() => dispatch({type:cryptoActionTypes.changeToCovcerter})} className="calc__btn">Converter</button>
         </div>
     )
 }

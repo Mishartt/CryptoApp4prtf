@@ -60,6 +60,71 @@
     border: #f3f3f377 solid 1px;
 }
 
+
+
+
+
+.converter__container{
+    width: 100%;
+    height: 50vh;
+    border: solid 1px #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.converter{
+    width: 80%;
+    height: 50%;
+    border: 3px teal solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.converter img{
+    transition: 1s;
+    width: 37px;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.converter__field{
+    width: 40%;
+}
+
+.converter__field select{
+    border-bottom: lightgray solid 1.5px;
+}
+
+.converter__field input{
+    border: transparent;
+    border-bottom: lightgray solid 1.5px;
+    outline: none;
+    padding-left:15px;
+    font-size: 1em;
+}
+
+.converter__field input :hover{
+    border-bottom: rgba(211, 211, 211, 0.532) solid 2.5px;
+}
+
+.converter__field input:focus{
+    transition: 0.1s;
+    border-bottom: rgb(4, 208, 58) 2px solid;
+}
+
+
+
+
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     50%{width: 120px; height: 120px;}
